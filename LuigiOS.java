@@ -1,7 +1,6 @@
 //TODO: Use Relative Positioning To Handle All Aspect Ratios(getWidth/getHeight + maybe some layout managers)
 //TODO: Find A Ubuntu Emulator That Can Run On Windows So You Can Run Stuff There
 //TODO: Get Android Studio And try to translate this stuff
-//TODO: Do All The Stuff ChatGPT Said About A Git And Github From Last Time ;)
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
