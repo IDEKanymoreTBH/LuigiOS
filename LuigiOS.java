@@ -12,12 +12,19 @@ import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 public class LuigiOS extends JPanel implements MouseListener{
     public LuigiOS() {
+        frame.setUndecorated(true);
+        frame.setResizable(false);
         this.addMouseListener(this);
         frame.add(this);
-        frame.setSize(400, 300);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().setFullScreenWindow(frame);
+        if(GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().isFullScreenSupported()) {
+            GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().setFullScreenWindow(frame);
+        } else {
+            Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+            frame.setSize(screenSize.width, screenSize.height);
+            frame.setLocation(0, 0);
+        }
         System.out.println(Integer.toString(getWidth()).concat(", ").concat(Integer.toString(getHeight())));
         if(imageURL != null) {
             try {
@@ -77,7 +84,7 @@ public class LuigiOS extends JPanel implements MouseListener{
             if(image2 != null) {
                 g.drawImage(image2, 0, 0, image2.getWidth(), image2.getHeight(), this);
             }
-            if(loadingLoopIncrement <= 10) {
+            if(loadingLoopIncrement <= 5) {
                 g.setColor(Color.BLACK);
                 g.fillRect((getWidth() / 2) - 100, getHeight() - 44, 200, 30);
                 if(loadingTimer == 1) {
@@ -101,7 +108,7 @@ public class LuigiOS extends JPanel implements MouseListener{
                     g.drawImage(image2, 0, 0, image2.getWidth(), image2.getHeight(), this);
                 }
                 timer.stop();
-                setRepeats(new Timer(4000, e -> {
+                setRepeats(new Timer(1000, e -> {
                     new javax.swing.Timer(1000, e2 -> repaint()).start();
                 }), false).start();
             }
