@@ -84,20 +84,48 @@ public class LuigiOS extends JPanel implements MouseListener{
             if(image2 != null) {
                 g.drawImage(image2, 0, 0, image2.getWidth(), image2.getHeight(), this);
             }
-            if(loadingLoopIncrement <= 5) {
+            if(loadingLoopIncrement <= 3) {
                 g.setColor(Color.BLACK);
-                g.fillRect((getWidth() / 2) - 100, getHeight() - 44, 200, 30);
+                g.fillRect((getWidth() / 2) - 113, getHeight() - 44, 226, 30);
                 if(loadingTimer == 1) {
                     g.setColor(Color.WHITE);
-                    g.fillRect((getWidth() / 2) - 98, getHeight() - 41, 12, 24);
+                    g.fillRect((getWidth() / 2) - 111, getHeight() - 41, 12, 24);
+                    g.fillRect((getWidth() / 2) - 97, getHeight() - 41, 12, 24);
                     loadingTimer++;
                 } else if(loadingTimer == 2) {
                     g.setColor(Color.WHITE);
-                    g.fillRect(100, getHeight() - 41, 12, 24);
+                    g.fillRect((getWidth() / 2) - 83, getHeight() - 41, 12, 24);
+                    g.fillRect((getWidth() / 2) - 69, getHeight() - 41, 12, 24);
                     loadingTimer++;
                 } else if(loadingTimer == 3) {
                     g.setColor(Color.WHITE);
-                    g.fillRect(150, getHeight() - 41, 12, 24);
+                    g.fillRect((getWidth() / 2) - 55, getHeight() - 41, 12, 24);
+                    g.fillRect((getWidth() / 2) - 41, getHeight() - 41, 12, 24);
+                    loadingTimer++;
+                } else if(loadingTimer == 4) {
+                    g.setColor(Color.WHITE);
+                    g.fillRect((getWidth() / 2) - 29, getHeight() - 41, 12, 24);
+                    g.fillRect((getWidth() / 2) - 15, getHeight() - 41, 12, 24);
+                    loadingTimer++;
+                } else if(loadingTimer == 5) {
+                    g.setColor(Color.WHITE);
+                    g.fillRect((getWidth() / 2) + 1, getHeight() - 41, 12, 24);
+                    g.fillRect((getWidth() / 2) + 15, getHeight() - 41, 12, 24);
+                    loadingTimer++;
+                } else if(loadingTimer == 6) {
+                    g.setColor(Color.WHITE);
+                    g.fillRect((getWidth() / 2) + 29, getHeight() - 41, 12, 24);
+                    g.fillRect((getWidth() / 2) + 43, getHeight() - 41, 12, 24);
+                    loadingTimer++;
+                } else if(loadingTimer == 7) {
+                    g.setColor(Color.WHITE);
+                    g.fillRect((getWidth() / 2) + 57, getHeight() - 41, 12, 24);
+                    g.fillRect((getWidth() / 2) + 71, getHeight() - 41, 12, 24);
+                    loadingTimer++;
+                } else if(loadingTimer == 8) {
+                    g.setColor(Color.WHITE);
+                    g.fillRect((getWidth() / 2) + 85, getHeight() - 41, 12, 24);
+                    g.fillRect((getWidth() / 2) + 99, getHeight() - 41, 12, 24);
                     loadingTimer = 1;
                     loadingLoopIncrement++;
                 }
